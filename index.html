@@ -83,7 +83,7 @@
           <p class="dim" aria-hidden="true">вул. П’ятницька, 10</p>
         </div>
       </div>
-      <form class="book" data-hotelos data-form-name="Запит на проживання" novalidate><p class="book-title">Перевірити вільні місця</p><div class="book-fields"><label class="field">Дата заїзду<input name="checkIn" type="date"></label><label class="field">Дата виїзду<input name="checkOut" type="date" aria-describedby="stay-checkout-error"><span id="stay-checkout-error" data-error-for="checkOut"></span></label><label class="field">Гостей<input name="guests" type="number" min="1" max="50" inputmode="numeric"></label><label class="field phone-f">Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="stay-phone-error"><span id="stay-phone-error" data-error-for="phone"></span></label><button class="btn orange" type="submit">Надіслати запит</button></div><label class="trap" aria-hidden="true">Не заповнюйте<input name="website" type="text" tabindex="-1" autocomplete="off"></label><p class="book-note">Обов’язковий лише телефон — передзвонимо й назвемо ціну для вас чи групи.</p><p data-status role="status" aria-live="polite"></p></form>
+      <form class="book" data-hotelos data-form-name="Запит на проживання" novalidate><p class="book-title">Перевірити вільні місця</p><div class="book-fields"><label class="field">Дата заїзду<input name="checkIn" type="date"></label><label class="field">Дата виїзду<input name="checkOut" type="date" aria-describedby="stay-checkout-error"><span id="stay-checkout-error" data-error-for="checkOut"></span></label><label class="field">Гостей<input name="guests" type="number" min="1" max="300" inputmode="numeric"></label><label class="field phone-f">Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="stay-phone-error"><span id="stay-phone-error" data-error-for="phone"></span></label><button class="btn orange" type="submit">Надіслати запит</button></div><label class="trap" aria-hidden="true">Не заповнюйте<input name="website" type="text" tabindex="-1" autocomplete="off"></label><p class="book-note">Обов’язковий лише телефон — передзвонимо й назвемо ціну для вас чи групи.</p><p data-status role="status" aria-live="polite"></p></form>
     </div></section>
 
     <section class="section stay" id="stay"><div class="wrap"><div class="rows">
@@ -93,7 +93,7 @@
 
     <section class="section conference" id="conference-request"><div class="wrap conf-grid">
       <div class="reveal"><code>04 · Конференц-зал</code><h2 class="title">Зустріч поруч із ночівлею</h2><p class="lead">Місткість, обладнання й вартість узгодимо телефоном.</p><figure class="media"><img src="images/conference.jpg" alt="Конференц-зал" loading="lazy"></figure></div>
-      <form class="conf-form reveal" data-hotelos data-form-name="Запит на конференц-зал" novalidate><label class="field full">Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required><span data-error-for="phone"></span></label><label class="field">Ім’я<input name="name" type="text" autocomplete="name" maxlength="200"></label><label class="field">Учасників<input name="guests" type="number" min="1" max="50" inputmode="numeric"></label><label class="field full">Дата<input name="date" type="date"></label><label class="field full">Формат і побажання<textarea name="message" maxlength="5000"></textarea></label><label class="trap" aria-hidden="true">Не заповнюйте<input name="website" type="text" tabindex="-1" autocomplete="off"></label><button class="btn orange" type="submit">Надіслати запит</button><p class="conf-note">Обов’язковий лише телефон.</p><p data-status role="status" aria-live="polite"></p></form>
+      <form class="conf-form reveal" data-hotelos data-form-name="Запит на конференц-зал" novalidate><label class="field full">Телефон<input name="phone" type="tel" autocomplete="tel" inputmode="tel" required><span data-error-for="phone"></span></label><label class="field">Ім’я<input name="name" type="text" autocomplete="name" maxlength="200"></label><label class="field">Учасників<input name="guests" type="number" min="1" max="300" inputmode="numeric"></label><label class="field full">Дата<input name="date" type="date"></label><label class="field full">Формат і побажання<textarea name="message" maxlength="5000"></textarea></label><label class="trap" aria-hidden="true">Не заповнюйте<input name="website" type="text" tabindex="-1" autocomplete="off"></label><button class="btn orange" type="submit">Надіслати запит</button><p class="conf-note">Обов’язковий лише телефон.</p><p data-status role="status" aria-live="polite"></p></form>
     </div></section>
 
     <section class="section" id="contacts"><div class="wrap loc-grid">
@@ -227,7 +227,7 @@ function setup(form) {
 			if (value) lead[name] = value;
 		}
 		const guests = parseInt(field('guests')?.value, 10);
-		if (guests >= 1 && guests <= 50) lead.guests = guests;
+		if (guests >= 1 && guests <= 300) lead.guests = guests;
 		if (genderSelects.length) lead.genders = genderSelects.map((select) => select.value);
 
 		submit.disabled = true;
