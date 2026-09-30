@@ -19,3 +19,6 @@ Mini Home Hotel-Hostel is a lodging property at vul. Piatnytska, 10 in Kamianets
 
 ## Notes
 The page explicitly states several details are unconfirmed: room types and bed counts, group capacity and rates, conference hall equipment and pricing, and current working hours (to be confirmed by phone).
+
+## Forms
+Connected to HotelOS (`kp-minihome`): `stay-request` (standard variant, also used for group requests; dorm beds are not confirmed on the page, so no gender selects), `conference-request`. Script and contract: `../shared/FORMS.md`.
